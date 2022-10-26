@@ -55,7 +55,8 @@ class BoursoramaSpider(scrapy.Spider):
 
             #Date de la collecte
             try: 
-              item['time'] = time.time()
+              # Time in ms
+              item['time'] = round(time.time() * 1000)
             except:
               item['time'] = 'None'
 
